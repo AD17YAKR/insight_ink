@@ -15,4 +15,6 @@ Search Functionality: For quick and easy access to specific topics or articles, 
 ![5](https://github.com/AD17YAKR/insight_ink/assets/71925269/8952af80-4a50-4915-9a68-591bef95554c)
 
 Here's The app video
-![4](https://github.com/AD17YAKR/insight_ink/assets/71925269/76adc53e-a2fe-46c0-9c40-dc6905d9b3b2)
+https://github.com/AD17YAKR/insight_ink/assets/71925269/7fbc628c-9310-429e-8270-d09694a9ffa5
+
+
