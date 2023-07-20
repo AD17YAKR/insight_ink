@@ -17,14 +17,35 @@ class NewsApiService {
   Future<List<Map<String, dynamic>>> fetchLatestNews() async {
     try {
       final Map<String, dynamic> data =
-          await _get('top-headlines?country=us&apiKey=$_apiKey');
+          await _get('top-headlines?country=in&apiKey=$_apiKey');
       if (data['status'] == 'ok') {
-        return List<Map<String, dynamic>>.from(data['articles']);
+        List<Map<String, dynamic>> articles =
+            List<Map<String, dynamic>>.from(data['articles']);
+        articles = articles.take(100).toList();
+        return articles;
       } else {
         throw Exception(data['message']);
       }
     } catch (e) {
       throw Exception('Failed to fetch news');
+    }
+  }
+
+  // Add a new method to search news by keyword
+  Future<List<Map<String, dynamic>>> searchNewsByKeyword(String keyword) async {
+    try {
+      final Map<String, dynamic> data =
+          await _get('everything?q=$keyword&apiKey=$_apiKey');
+      if (data['status'] == 'ok') {
+        List<Map<String, dynamic>> articles =
+            List<Map<String, dynamic>>.from(data['articles']);
+        articles = articles.take(100).toList();
+        return articles;
+      } else {
+        throw Exception(data['message']);
+      }
+    } catch (e) {
+      throw Exception('Failed to search news');
     }
   }
 }

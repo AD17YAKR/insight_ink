@@ -15,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 2),
+      duration: const Duration(milliseconds: 2000),
     );
     _animationController?.forward();
     _animationController?.addStatusListener((status) {
@@ -37,7 +37,10 @@ class _SplashScreenState extends State<SplashScreen>
       body: Center(
         child: FadeTransition(
           opacity: _animationController!,
-          child: FlutterLogo(size: 100),
+          child: SizedBox(
+            height: 150,
+            child: Image.asset('assets/Assets.jpeg'),
+          ),
         ),
       ),
     );
